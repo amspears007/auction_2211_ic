@@ -1,4 +1,6 @@
 require './lib/item'
+require'./lib/auction'
+require './lib/attendee'
 
 RSpec.describe Item do
   it 'exists and has a name' do

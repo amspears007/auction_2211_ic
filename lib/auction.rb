@@ -20,5 +20,14 @@ class Auction
       item.bids == {}
     end
   end
+
+  def potential_revenue
+    final_bids = []
+    items.each do |item|
+      final_bids << item if item.bids != {}
+    end
+    final_bids
+  end
+
 end
 

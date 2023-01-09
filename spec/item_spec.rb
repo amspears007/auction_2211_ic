@@ -13,12 +13,7 @@ RSpec.describe Item do
 
   it 'starts with no bids but then adds them' do
     auction = Auction.new
-
     item1 = Item.new('Chalkware Piggy Bank')
-    item2 = Item.new('Bamboo Picture Frame')
-    item3 = Item.new('Homemade Chocolate Chip Cookies')
-    item4 = Item.new('2 Days Dogsitting')
-    item5 = Item.new('Forever Stamps')
 
     attendee1 = Attendee.new(name: 'Megan', budget: '$50')
     attendee2 = Attendee.new(name: 'Bob', budget: '$75')
@@ -30,5 +25,6 @@ RSpec.describe Item do
     item1.add_bid(attendee1, 22)
 
     expect(item1.bids).to eq({ attendee2 => 20, attendee1 => 22 })
+    expect(item1.current_high_bid).to eq(22)
   end
 end
